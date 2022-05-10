@@ -57,7 +57,7 @@
 \section{Introduction}
 Yelp is a famous review and recommendation mobile application in the United States. On this APP, you can find out how good a restaurant is by checking its rating. However, the rates of the restaurants are oversimplified. It is generally an average of all the stars given by users. If someone uses "zombie accounts" to give reviews on a restaurant, it can greatly affect the rating stars to a unfair, meaningless number. Therefore, we need to avoid such cases by improving the rating algorithms to give a more comprehensive and accurate restaurant rating. 
 
-In our project, we developed a new rating system that takes users quality into account. We believe that an active user with more agreements from other users tends to give a high quality reviews and we should consider more on those kinds of reviews given by a high-quality. To give an improved rating on restaurants on Yelp, we came up with several algorithms on rating users and reviews to re-rating the restaurants. We implemented the algorithms to the Yelp's data on reviews, users, tips, and businesses and 
+In our project, we developed a new rating system that takes users quality into account. We believe that an active user with more agreements from other users tends to give a high quality reviews and we should consider more on those kinds of reviews given by a high-quality. To give an improved rating on restaurants on Yelp, we came up with several algorithms on rating users and reviews to re-rating the restaurants. We implemented the algorithms to the Yelp's data on reviews, users, tips, and businesses.
 
 \section{Design Diagrams}
 Figure \ref{process_diagram} depicts how we processed the datasets and came up with the final analysis and result. We started with 4 data sources, profiling and cleaning these data in parallel. Then we applied our algorithms to the data and generated the final data. After that, we integrated our processed data with more analysis and computations. At last, we concluded the final results with data visualization.
@@ -578,7 +578,7 @@ In summary, by integrating related datasets, we could do further analysis on yel
 \end{figure}
 
 Figure \ref{line_chart_figure} shows a line chart of the user rates and user data.
-The red line shows the rate for top 20 users. Other lines are user data we considered in minting the user rate. They are Review Count(yellow line), Friends(green line), Fans(grey line), Average Stars(blue line), respectively.
+The red line shows the rate for top 20 users. Other lines are user data we considered in minting the user rate. They are Review Count (yellow line), Friends (green line), Fans (grey line), Average Stars (blue line), respectively.
 
 \begin{figure}[htp]
     \centering
@@ -587,7 +587,21 @@ The red line shows the rate for top 20 users. Other lines are user data we consi
     \label{rate_comparasion_figure}
 \end{figure}
 
-Figure \ref{rate_comparasion_figure} shows a snippet of comparison between restaurant's new rate vs original rate. The mean of new rate is 67.72, while the mean of original rate is 4.258. As we could see, businesses which have same rates before re-rating now have different rates after adjustment. And it could help users differentiate them. 
+\begin{table}[h!]
+\centering
+\begin{tabular}{l l l} 
+ \hline
+ & Before Rerating & After Rerating  \\ [0.5ex] 
+ \hline
+$ Mean $ & 4.258& 67.72  \\
+ \hline
+\end{tabular}
+\caption{Mean of the business rate}
+
+\label{mean}
+\end{table}
+
+Figure \ref{rate_comparasion_figure} shows a snippet of comparison between restaurant's new rate vs original rate. As show in Table \ref{mean}, the mean of new rate is 67.72, while the mean of original rate is 4.258. As we could see, businesses which have same rates before re-rating now have different rates after adjustment. And it could help users differentiate them. 
 
 What is more, with the re-rating system, some businesses even obtain higher rates than those which had higher rates before. This indicates that the review counts, friends amount and history time have exerted influence on the use's weight. Furthermore, after users' re-rating accordingly, the businesses rates have changed correspondingly. With the novel mechanism, we better illustrate the roles that different users play and, to some extent, shows the social network effect.    
 
